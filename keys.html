@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Реляционные СУБД</title>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar">
+                <a href="index.html" class="nav-branding"><img src="img/logo.png" alt=""></a>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="keys.html" class="nav-link">Типы ключей</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="relations.html" class="nav-link">Типы связей</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="acid.html" class="nav-link">ACID</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="examples.html" class="nav-link">Примеры СУБД</a>
+                    </li>
+                </ul>
+
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </header>
+        <section>
+            <div class="content-container">
+                <h1><span>Типы</span> ключей</h1>
+                <div class="tab-block">
+                    <span class="bar"></span>
+                    <div class="tab-text">
+                        <p><span>Ключ</span> — это минимальный набор атрибутов, по значениям которых можно однозначно выбрать требуемый экземпляр сущности. Минимальность означает, что исключение из набора любого атрибута не позволяет идентифицировать сущность по оставшимся. Каждая сущность должна но не обязана обладать хотя бы одним возможным ключом.</p>
+                    </div>
+                </div>
+                <div class="tab-block">
+                    <span class="bar"></span>
+                    <div class="tab-text">
+                        <p>Ключи можно разделить по признаку общности как:</p>
+                        <div class="tab-block">
+                            <span class="bar"></span>
+                            <div class="tab-text">
+                                <p><span>Простой</span> — формирован из значений единственного поля, которые однозначно определяют каждую запись</p>
+                            </div>
+                        </div>
+                        <div class="tab-block">
+                            <span class="bar"></span>
+                            <div class="tab-text">
+                                <p><span>Составной</span> — сформирован из значений нескольких полей, применяется</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-block">
+                    <span class="bar"></span>
+                    <div class="tab-text">
+                        <p>По способу возникновения:</p>
+                        <div class="tab-block">
+                            <span class="bar"></span>
+                            <div class="tab-text">
+                                <p><span>Естественный</span> — основан на уже существующем поле. Например, поле <i>фамилия</i></p>
+                                <p><span>+</span>Меньший объем данных</p>
+                                <p><span>—</span>Изменяемый</p>
+                                <p><span>—</span>Не гарантируется уникальность</p>
+                            </div>
+                        </div>
+                        <div class="tab-block">
+                            <span class="bar"></span>
+                            <div class="tab-text">
+                                <p><span>Суррогатный</span> — основан на добавленном искусственным путем отдельном поле для однозначной идентификации</p>
+                                <p><span>+</span>Неизменяемость</p>
+                                <p><span>+</span>Гарантированная уникальность</p>
+                                <p><span>+</span>Эффективность — намного эффективнее проводить выборку по 8-байтовым числам, чем по громоздким записям</p>
+                                <p><span>—</span>Долнительное поле увеличивает объем таблицы</p>
+                            </div>
+                        </div>
+                        <div class="tab-block">
+                            <span class="bar"></span>
+                            <div class="tab-text">
+                                <p><span>Интеллектуальный</span> — основан на естественном ключе путем добавления дополнительного поля</p>
+
+                                <p>Например:</p>
+                                <table border="1" style="margin: auto">
+                                    <tr>
+                                        <td>Ключ</td>
+                                        <td>Фамилия</td>  
+                                        <td>Имя</td>
+                                    </tr>
+                                    <tr>
+                                        <td>АП</td>
+                                        <td>Андросов</td>
+                                        <td>Петр</td>
+                                    </tr>
+                                </table>
+                                <p>Примеряется крайне редко и лишь для при необходимости добавления сокращенных кодов (например, <i>АП-0119</i>)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-block">
+                    <span class="bar"></span>
+                    <div class="tab-text">
+                        <p>По ограничению целостности данных:</p>
+                        <div class="tab-block">
+                            <span class="bar"></span>
+                            <div class="tab-text">
+                                <p><span>Первичный ключ</span> — служит как ограничение целостности в рамках одной таблицы для однозначной идентификации, конкретно поле первичного ключа не может повторятся или быть пустым</p>
+                            </div>
+                        </div>
+                        <div class="tab-block">
+                            <span class="bar"></span>
+                            <div class="tab-text">
+                                <p><span>Внешний ключ (вторичный)</span> — служит как ограничение целостности связей нескольких таблиц, конкретно подчиненная таблица не может ссылаться на несуществующие записи главной таблицы(что позволяет строить целостные модели данных)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <p>2023 Androsov RTU MIREA</p>
+            <a href="https://t.me/nervous_void"><img src="img/tg_logo.png" alt="telegram"></a>
+        </footer>
+        <script src="script.js"></script>
+    </body>
+</html>

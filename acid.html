@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>ACID in Relational Databases</title>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar">
+                <a href="index.html" class="nav-branding"><img src="img/logo.png" alt=""></a>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="keys.html" class="nav-link">Типы ключей</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="relations.html" class="nav-link">Типы связей</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="acid.html" class="nav-link">ACID</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="examples.html" class="nav-link">Примеры СУБД</a>
+                    </li>
+                </ul>
+
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </header>
+        <section>
+            <div class="content-container">
+                <h1>Что такое <span>ACID?</span></h1>
+                <div class="tab-block">
+                    <span class="bar"></span>
+                    <div class="tab-text">
+                        <p class="subtitle">
+                            Это набор требований к базе данных, обеспечивающий наиболее надёжную и предсказуемую её работу. Принципы ACID невероятно важны, потому что от них зависит сохранность данных в базе данных. ACID считается фактическим стандартом для всех высоконадёжных систем, реляционных СУБД, в первую очередь
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wrapper">
+                <div class="cols">
+                    <div class="col" ontouchstart="this.classList.toggle('hover');">
+                        <div class="container">
+                            <div class="front">
+                                <div class="inner">
+                                    <p>A</p>
+                                    <span>Atomicity</span>
+                                </div>
+                            </div>
+                            <div class="back">
+                                <div class="inner">
+                                    <p>Атомарность гарантирует, что каждая транзакция будет выполнена полностью или не будет выполнена совсем. Не допускаются промежуточные состояния</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col" ontouchstart="this.classList.toggle('hover');">
+                        <div class="container">
+                            <div class="front">
+                                <div class="inner">
+                                    <p>C</p>
+                                    <span>Consistency</span>
+                                </div>
+                            </div>
+                            <div class="back">
+                                <div class="inner">
+                                    <p>Согласованность вытекает из атомарности. Благодаря тому, что транзакция не допускает промежуточных результатов, база остается консистентной, то есть согласованной</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col" ontouchstart="this.classList.toggle('hover');">
+                        <div class="container">
+                            <div class="front">
+                                <div class="inner">
+                                    <p>I</p>
+                                    <span>Isolation</span>
+                                </div>
+                            </div>
+                            <div class="back">
+                                <div class="inner">
+                                    <p>Изолированность говорит о том, что во время выполнения транзакции параллельные транзакции не должны оказывать влияния на её результат</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col" ontouchstart="this.classList.toggle('hover');">
+                        <div class="container">
+                            <div class="front">
+                                <div class="inner">
+                                    <p>D</p>
+                                    <span>Durability</span>
+                                </div>
+                            </div>
+                            <div class="back">
+                                <div class="inner">
+                                    <p>Надежность заключается в том, что если пользователь получил подтверждение от системы, что транзакция выполнена, он может быть уверен, что сделанные им изменения не будут отменены из-за какого-либо сбоя</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <p>2023 Androsov RTU MIREA</p>
+            <a href="https://t.me/nervous_void"><img src="img/tg_logo.png" alt="telegram"></a>
+        </footer>
+        <script src="script.js"></script>
+    </body>
+</html>
